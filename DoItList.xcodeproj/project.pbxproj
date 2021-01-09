@@ -11,6 +11,9 @@
 		4E66A0EA25A8F68B009A71EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A0E925A8F68B009A71EA /* ContentView.swift */; };
 		4E66A0EC25A8F693009A71EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E66A0EB25A8F693009A71EA /* Assets.xcassets */; };
 		4E66A0EF25A8F693009A71EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E66A0EE25A8F693009A71EA /* Preview Assets.xcassets */; };
+		4E66A0F825A8FAED009A71EA /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A0F725A8FAED009A71EA /* ListManager.swift */; };
+		4E66A0FC25A8FB08009A71EA /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A0FB25A8FB08009A71EA /* List.swift */; };
+		4E66A10125A9A6F8009A71EA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E66A10025A9A6F8009A71EA /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		4E66A0EB25A8F693009A71EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E66A0EE25A8F693009A71EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E66A0F025A8F693009A71EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E66A0F725A8FAED009A71EA /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
+		4E66A0FB25A8FB08009A71EA /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		4E66A10025A9A6F8009A71EA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			children = (
 				4E66A0E725A8F68B009A71EA /* DoItListApp.swift */,
 				4E66A0E925A8F68B009A71EA /* ContentView.swift */,
+				4E66A10025A9A6F8009A71EA /* RegisterView.swift */,
+				4E66A0F725A8FAED009A71EA /* ListManager.swift */,
+				4E66A0FB25A8FB08009A71EA /* List.swift */,
 				4E66A0EB25A8F693009A71EA /* Assets.xcassets */,
 				4E66A0F025A8F693009A71EA /* Info.plist */,
 				4E66A0ED25A8F693009A71EA /* Preview Content */,
@@ -139,6 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E66A0EA25A8F68B009A71EA /* ContentView.swift in Sources */,
+				4E66A10125A9A6F8009A71EA /* RegisterView.swift in Sources */,
+				4E66A0FC25A8FB08009A71EA /* List.swift in Sources */,
+				4E66A0F825A8FAED009A71EA /* ListManager.swift in Sources */,
 				4E66A0E825A8F68B009A71EA /* DoItListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
