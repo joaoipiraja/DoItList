@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
     @EnvironmentObject var listManager :ListManager
     @State var isPresented:Bool = false
+    @State var isActivate : Bool = true
     
     var body: some View {
+        
         NavigationView{
             List{
                 ForEach(listManager.listDivision){ d in
@@ -29,10 +32,10 @@ struct ContentView: View {
                             
                     }
                     
-                    }
+                  }
                     
                 }
-                .onDelete(perform: deleteItem)
+                .onDelete(perform: listManager.removeDivision)
             }
             .navigationTitle("DoItList")
             .navigationBarItems(trailing:
@@ -53,9 +56,7 @@ struct ContentView: View {
         
     }
     
-    func deleteItem(at offsets: IndexSet){
-        self.listManager.listDivision.remove(at: offsets.first!)
-    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
