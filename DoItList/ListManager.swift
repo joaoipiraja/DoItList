@@ -25,21 +25,18 @@ class ListManager: ObservableObject{
         
     }
     
-    func removeSection(at section:Division){
-        if let index = listDivision.firstIndex(where: {$0.id == section.id}){
-            listDivision.remove(at: index)
-        }
-    }
-    
-    func addTask(at sec_id: UUID, with name:String){
+   
+    func addTask(at division:Division, with name:String){
         
-        
-        if let index = listDivision.firstIndex(where: {$0.id == sec_id}){
-           let color_aux = listDivision[index].color.opacity(0.5)
-           let task_aux = Task(id: UUID(), name: name, color: color_aux)
+        print(division.name)
+        if let index = listDivision.firstIndex(where: {$0.id == division.id}){
+            let task_aux = Task(id: UUID(), name: name)
+            print(index,task_aux)
             listDivision[index].tasks.append(task_aux)
         }
     }
+    
+   
     
     
     

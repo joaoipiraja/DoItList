@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegisterView: View {
+struct RegisterDivisionView: View {
     @EnvironmentObject var listManager :ListManager
     @Binding private var showModal:Bool
     @State private var selectedColor = Color.red
@@ -78,6 +78,6 @@ struct RegisterView: View {
 struct RegisterView_Previews: PreviewProvider {
     static let listManager = ListManager()
     static var previews: some View {
-        RegisterView().environmentObject(listManager)
+        RegisterDivisionView().environmentObject(listManager)
     }
 }

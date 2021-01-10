@@ -17,7 +17,7 @@ struct ContentView: View {
             List{
                 ForEach(listManager.listDivision){ d in
                     
-                   
+                    NavigationLink(destination: TasksView(division: d)){
                     HStack{
                         
                         Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(d.color)
@@ -27,8 +27,8 @@ struct ContentView: View {
                                 
                             }.buttonStyle(PlainButtonStyle())*/
                             
-                            
-                            
+                    }
+                    
                     }
                     
                 }
@@ -44,9 +44,10 @@ struct ContentView: View {
                                         Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(Color(#colorLiteral(red: 0.07910548896, green: 0.5533952117, blue: 0.3261781335, alpha: 1)))
                                         
                                     }.sheet(isPresented: $isPresented){
-                                        RegisterView(showModal: self.$isPresented)
+                                        RegisterDivisionView(showModal: self.$isPresented)
                                     }
             )
+            .listStyle(GroupedListStyle())
            
         }
         
