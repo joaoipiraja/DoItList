@@ -57,7 +57,7 @@ struct RegisterDivisionView: View {
                 if(!self.divisionName.isEmpty){
                     Button(action:{
                         listManager.addSection(name: self.divisionName, color: self.selectedColor)
-                        showModal.toggle()
+                        showModal = false
                     }){
                         HStack(alignment: .center){
                             Image(systemName: "folder.badge.plus")
