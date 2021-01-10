@@ -11,10 +11,12 @@ struct RegisterTaskView: View {
     @EnvironmentObject var listManager :ListManager
     @Binding var showModal:Bool
     @State private var taskName = ""
-    var division:Division
+    @ObservedObject var division:Division
+    
     
    
     var body: some View {
+        
         
         VStack(alignment: .trailing){
             
