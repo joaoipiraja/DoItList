@@ -10,39 +10,62 @@ import SwiftUI
 
 struct TasksView: View {
     @EnvironmentObject var listManager :ListManager
-    var division:Division
+    @ObservedObject var division:Division
     @State var isPresented:Bool = false
 
+
     var body: some View {
-        
-        VStack{
-            ZStack(alignment: .center){
-                Color(UIColor(division.color)).cornerRadius(10.0)
-                Text(division.name).font(.title).fontWeight(.bold).foregroundColor(.white)
-            }.padding()
-            Spacer()
-            List{
-                ForEach(division.tasks){ t in
-                    HStack{
-                        Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(division.color)
+            
+        if(!division.isDeleted){
+            
+            
+            VStack{
+                ZStack(alignment: .center){
+                    Color(UIColor(division.color)).cornerRadius(10.0)
+                    Text(division.name).font(.title).fontWeight(.bold).foregroundColor(.white)
+                }.padding()
+                Spacer()
+                List{
+                    ForEach(division.tasks){ t in
+                        HStack{
+                            Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(division.color)
+                            
+                            Text(t.name).font(.title3).foregroundColor(division.color)
+                        }.padding()
                         
-                        Text(t.name).font(.title3).foregroundColor(division.color)
-                    }.padding()
+                    }
                     
-                    
+                    .onDelete{ row in
+                        self.listManager.removeTask(at: row, division: division)
+                    }
                 }
             }
-        } .navigationBarItems(trailing:
-                                Button(action:{
-                                    
-                                    isPresented.toggle()
-                                    
-                                }){
-                                    Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(division.color)
-                                    
-                                }).sheet(isPresented: $isPresented){
-                                    RegisterTaskView(showModal: $isPresented, division: division)
-                                }
+            .navigationBarHidden(false)
+            .navigationBarItems(trailing:
+                                
+                                    Button(action:{
+                                        
+                                        isPresented.toggle()
+                                        
+                                    }){
+                                        Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(division.color)
+                                        
+                                    })
+                                    .sheet(isPresented: $isPresented){
+                                        RegisterTaskView(showModal: $isPresented, division: division)
+                                    }
+            
+        
+        
+        }else{
+            HStack{
+                
+                Text("Select Something...").font(.title)
+                
+            }.foregroundColor(Color(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)))
+            .navigationBarTitle("")
+                .navigationBarHidden(true)
+        }
      
     }
 }
