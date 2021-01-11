@@ -65,7 +65,7 @@ struct RegisterDivisionView: View {
                             Image(systemName: "folder.badge.plus")
                             Text("Save")
                         }.padding()
-                    }.background(Color(#colorLiteral(red: 0.07910548896, green: 0.5533952117, blue: 0.3261781335, alpha: 1))).foregroundColor(.white).cornerRadius(8)
+                    }.background(Color(#colorLiteral(red: 0.07910548896, green: 0.5533952117, blue: 0.3261781335, alpha: 1))).foregroundColor(.white).cornerRadius(8).padding()
                 }
                
             }

@@ -46,7 +46,7 @@ struct RegisterTaskView: View {
                             Image(systemName: "folder.badge.plus")
                             Text("Save")
                         }.padding()
-                    }.background(division.color.get_Color).foregroundColor(.white).cornerRadius(8)
+                    }.background(division.color.get_Color).foregroundColor(.white).cornerRadius(8).padding()
                 }
                
             }
