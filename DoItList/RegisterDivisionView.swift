@@ -54,10 +54,12 @@ struct RegisterDivisionView: View {
                    
                 }
                 
+                
+                //Cor(uiColor: UIColor(  selectedColor))
                 if(!self.divisionName.isEmpty){
                     Button(action:{
-                        listManager.addSection(name: self.divisionName, color: self.selectedColor)
-                        showModal = false
+                        listManager.addSection(name: self.divisionName, color: Cor(color: selectedColor))
+                        showModal.toggle()
                     }){
                         HStack(alignment: .center){
                             Image(systemName: "folder.badge.plus")

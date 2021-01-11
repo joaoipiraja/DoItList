@@ -17,42 +17,42 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView{
-            List{
-                ForEach(listManager.listDivision){ d in
-                    
-                    NavigationLink(destination: TasksView(division: d)){
-                    HStack{
-                        
-                        Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(d.color)
-                        Text(d.name).font(.title2)
-                            /*Button("Clique"){
-                                isPresented.toggle()
-                                
-                            }.buttonStyle(PlainButtonStyle())*/
+                    List{
+                        ForEach(listManager.listDivision){ d in
                             
-                    }
-                    
-                  }
-                    
-                }
-                .onDelete(perform: listManager.removeDivision)
-            }
-            .navigationTitle("DoItList")
-            .navigationBarItems(trailing:
-                                    Button(action:{
-                                        
+                            NavigationLink(destination: TasksView(division: d)){
+                            HStack{
+                                
+                                Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(d.color.get_Color)
+                                Text(d.name).font(.title2)
+                                    /*Button("Clique"){
                                         isPresented.toggle()
                                         
-                                    }){
-                                        Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(Color(#colorLiteral(red: 0.07910548896, green: 0.5533952117, blue: 0.3261781335, alpha: 1)))
-                                        
-                                    }.sheet(isPresented: $isPresented){
-                                        RegisterDivisionView(showModal: self.$isPresented)
-                                    }
-            )
-            .listStyle(GroupedListStyle())
-           
-        }
+                                    }.buttonStyle(PlainButtonStyle())*/
+                                    
+                            }
+                            
+                          }
+                            
+                        }
+                        .onDelete(perform: listManager.removeDivision)
+                    }
+                    .navigationTitle("DoItList")
+                    .navigationBarItems(trailing:
+                                            Button(action:{
+                                                
+                                                isPresented.toggle()
+                                                
+                                            }){
+                                                Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(Color(#colorLiteral(red: 0.07910548896, green: 0.5533952117, blue: 0.3261781335, alpha: 1)))
+                                                
+                                            }.sheet(isPresented: $isPresented){
+                                                RegisterDivisionView(showModal: self.$isPresented)
+                                            }
+                    )
+                    .listStyle(GroupedListStyle())
+                   
+                }
         
     }
     

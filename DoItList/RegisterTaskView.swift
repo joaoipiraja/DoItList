@@ -23,7 +23,7 @@ struct RegisterTaskView: View {
             Button(action:{
                 showModal.toggle()
             }){
-                Image(systemName: "xmark.circle.fill").resizable().frame(width: 25, height: 25).foregroundColor(division.color)
+                Image(systemName: "xmark.circle.fill").resizable().frame(width: 25, height: 25).foregroundColor(division.color.get_Color)
                 
             }.padding()
            
@@ -46,7 +46,7 @@ struct RegisterTaskView: View {
                             Image(systemName: "folder.badge.plus")
                             Text("Save")
                         }.padding()
-                    }.background(division.color).foregroundColor(.white).cornerRadius(8)
+                    }.background(division.color.get_Color).foregroundColor(.white).cornerRadius(8)
                 }
                
             }

@@ -21,16 +21,19 @@ struct TasksView: View {
             
             VStack{
                 ZStack(alignment: .center){
-                    Color(UIColor(division.color)).cornerRadius(10.0)
+                    division.color.get_Color.cornerRadius(10.0)
                     Text(division.name).font(.title).fontWeight(.bold).foregroundColor(.white)
                 }.padding()
                 Spacer()
                 List{
                     ForEach(division.tasks){ t in
                         HStack{
-                            Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(division.color)
                             
-                            Text(t.name).font(.title3).foregroundColor(division.color)
+                            //Cor(uiColor: UIColor(  selectedColor))
+                            
+                            Image(systemName: "checkmark").resizable().frame(width: 20, height: 20).foregroundColor(division.color.get_Color)
+                            
+                            Text(t.name).font(.title3).foregroundColor(division.color.get_Color)
                         }.padding()
                         
                     }
@@ -48,7 +51,7 @@ struct TasksView: View {
                                         isPresented.toggle()
                                         
                                     }){
-                                        Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(division.color)
+                                        Image(systemName: "plus.circle").resizable().frame(width: 25, height: 25).foregroundColor(division.color.get_Color)
                                         
                                     })
                                     .sheet(isPresented: $isPresented){
