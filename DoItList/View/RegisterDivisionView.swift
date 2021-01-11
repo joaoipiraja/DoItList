@@ -13,20 +13,15 @@ struct RegisterDivisionView: View {
     @State private var selectedColor = Color.red
     @State private var divisionName = ""
     
-    
-    
     #if DEBUG
     init(){
         self._showModal = .constant(true)
     }
     #endif
     
-    
     init(showModal:Binding<Bool>){
         self._showModal = showModal
     }
-    
-    
     
     var body: some View {
         
@@ -50,12 +45,9 @@ struct RegisterDivisionView: View {
                        ColorPicker("",selection: $selectedColor).padding()
                         
                     }
-                    
-                   
+ 
                 }
                 
-                
-                //Cor(uiColor: UIColor(  selectedColor))
                 if(!self.divisionName.isEmpty){
                     Button(action:{
                         listManager.addSection(name: self.divisionName, color: Cor(color: selectedColor))
@@ -69,11 +61,8 @@ struct RegisterDivisionView: View {
                 }
                
             }
-          
-            
-            
+ 
         }
-       
     }
 }
 

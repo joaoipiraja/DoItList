@@ -43,6 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0930EA25ACEF5B002EC4D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E66A0E925A8F68B009A71EA /* ContentView.swift */,
+				4E66A10025A9A6F8009A71EA /* RegisterDivisionView.swift */,
+				4E66A10A25AA6EDF009A71EA /* RegisterTaskView.swift */,
+				4E66A10525AA4A67009A71EA /* TasksView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E0930ED25ACEF8E002EC4D4 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E66A0F725A8FAED009A71EA /* ListManager.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		4E0930EF25ACEF98002EC4D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E66A0FB25A8FB08009A71EA /* List.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4E66A0DB25A8F68B009A71EA = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				4E66A0E725A8F68B009A71EA /* DoItListApp.swift */,
-				4E66A0E925A8F68B009A71EA /* ContentView.swift */,
-				4E66A10025A9A6F8009A71EA /* RegisterDivisionView.swift */,
-				4E66A10A25AA6EDF009A71EA /* RegisterTaskView.swift */,
-				4E66A0F725A8FAED009A71EA /* ListManager.swift */,
-				4E66A0FB25A8FB08009A71EA /* List.swift */,
-				4E66A10525AA4A67009A71EA /* TasksView.swift */,
+				4E0930EA25ACEF5B002EC4D4 /* View */,
+				4E0930ED25ACEF8E002EC4D4 /* View Model */,
+				4E0930EF25ACEF98002EC4D4 /* Model */,
 				4E66A0EB25A8F693009A71EA /* Assets.xcassets */,
 				4E66A0F025A8F693009A71EA /* Info.plist */,
 				4E66A0ED25A8F693009A71EA /* Preview Content */,

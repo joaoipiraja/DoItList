@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DoItListApp: App {
+    
     @Environment(\.scenePhase) var scenePhase
     
     var listManager = ListManager()

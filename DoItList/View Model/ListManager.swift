@@ -8,44 +8,31 @@
 import Foundation
 import SwiftUI
 
-
 class ListManager: ObservableObject{
-    
-    
     
     @Published var listDivision = [Division]()
     private let defaults = UserDefaults.standard
     
-    
-    
-    
     init(){
         getBackDatabase()
     }
+    
     private func isKeyPresentInUserDefaults(key: String) -> Bool {
         return defaults.object(forKey: key) != nil
     }
     
     
     private func saveInDatabase(){
-        
-        
         let jsonEncoder = JSONEncoder()
-  
         do {
             let jsonData: Data = try jsonEncoder.encode(listDivision)
-           
-            if  let jsonString =  String(data: jsonData, encoding: String.Encoding.utf8) {
-                
+            if let jsonString =  String(data: jsonData, encoding: String.Encoding.utf8) {
                 self.defaults.set(jsonString, forKey: "listDivision")
                 print(jsonString)
             }
-            
         } catch let error as NSError {
             print("Array convertIntoJSON - \(error.description)")
         }
-        
-        
     }
     
     private func getBackDatabase(){
@@ -61,45 +48,29 @@ class ListManager: ObservableObject{
             let dataDecodedUTF8 = data.data(using: .utf8)!
             self.listDivision = try decoder.decode(Array<Division>.self, from: dataDecodedUTF8)
             
-            
         }catch{
             print(error)
         }
         
     }
     
-    
-    
-    
-    
     func addSection(name:String, color:Cor){
-        
         let tasks_aux = [Task]()
         let sec_aux = Division(id: UUID(), name: name, tasks: tasks_aux, color: color)
         listDivision.append(sec_aux)
-        
         saveInDatabase()
-        
     }
     
     
     func addTask(at division:Division, with name:String){
         
         print(division.name)
-        if let index = listDivision.firstIndex(where: {
-            
-            $0.id == division.id
-            
-        }){
-            
+        if let index = listDivision.firstIndex(where: {$0.id == division.id}){
             let task_aux = Task(id: UUID(), name: name)
             print(index,task_aux)
             listDivision[index].tasks.append(task_aux)
             saveInDatabase()
-            
         }
-        
-        
         
     }
     
@@ -110,8 +81,6 @@ class ListManager: ObservableObject{
             listDivision.remove(at: index)
             saveInDatabase()
         }
-        
-        
     }
     
     func removeTask(at offsets: IndexSet, division:Division){
@@ -126,21 +95,8 @@ class ListManager: ObservableObject{
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
-/*
- (255, 255, 153)
- (255, 204, 153)
- 
- */
 
 
 
